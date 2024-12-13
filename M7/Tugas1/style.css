@@ -1,0 +1,125 @@
+/* Header */
+header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-family: 'Arial', sans-serif;
+    font-size: 1.8rem;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: color 0.3s, background 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: white;
+    background: #1976d2;
+    border-radius: 5px;
+}
+
+/* Gallery */
+main .row h5 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+main img {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+main img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Video Section */
+aside h5 {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+aside {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background: #2a5298; /* Soft blue color */
+    font-family: 'Arial', sans-serif;
+    color: #fff; /* White text */
+    font-size: 1rem;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-weight: bold; /* Make text bold */
+}
+
+/* Footer Link */
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #ffcc00; /* Yellow color on hover */
+}
+
+/* General Styles */
+body {
+    background: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+    color: #444;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes full height */
+}
+
+.container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1; /* Allow content to grow and push footer to the bottom */
+}
+
+footer {
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    header {
+        font-size: 1.5rem;
+    }
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+    .container {
+        padding: 15px;
+    }
+}

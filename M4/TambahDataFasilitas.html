@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tambah Fasilitas</title>
+    <script>
+        function validateFacilityForm() {
+            const facilityId = document.getElementById('idFasilitas').value;
+            const facilityName = document.getElementById('namaFasilitas').value;
+            const price = document.getElementById('harga').value;
+            const quota = document.getElementById('kuotaFasilitas').value;
+            const openTime = document.getElementById('jamBuka').value;
+            const closeTime = document.getElementById('jamTutup').value;
+
+            if (!facilityId || !facilityName || !price || !quota || !openTime || !closeTime) {
+                alert('Semua field harus diisi!');
+                return false; // Mencegah pengiriman form
+            }
+
+            displayFacilityData(facilityId, facilityName, price, quota, openTime, closeTime);
+            return false; // Mencegah pengiriman form
+        }
+
+        function displayFacilityData(facilityId, facilityName, price, quota, openTime, closeTime) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<h3>Data Fasilitas Ditambahkan:</h3>
+                                   <ul>
+                                       <li>ID Fasilitas: ${facilityId}</li>
+                                       <li>Nama Fasilitas: ${facilityName}</li>
+                                       <li>Harga: ${price}</li>
+                                       <li>Kuota: ${quota}</li>
+                                       <li>Jam Buka: ${openTime}</li>
+                                       <li>Jam Tutup: ${closeTime}</li>
+                                   </ul>`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Form Tambah Fasilitas</h2>
+    <form onsubmit="return validateFacilityForm();">
+        <label for="idFasilitas">ID Fasilitas:</label><br>
+        <input type="text" id="idFasilitas" name="idFasilitas"><br><br>
+
+        <label for="namaFasilitas">Nama Fasilitas:</label><br>
+        <select id="namaFasilitas" name="namaFasilitas">
+            <option value="">-- Pilih --</option>
+            <option value="gym">GYM</option>
+            <option value="kolam_renang">Kolam Renang</option>
+            <option value="biliard">Biliard</option>
+        </select><br><br>
+
+        <label for="harga">Harga:</label><br>
+        <input type="text" id="harga" name="harga"><br><br>
+
+
+        <label for="kuotaFasilitas">Kuota:</label><br>
+        <input type="number" id="kuotaFasilitas" name="kuotaFasilitas"><br><br>
+
+        <label for="jamBuka">Jam Buka:</label><br>
+        <input type="time" id="jamBuka" name="jamBuka"><br><br>
+
+        <label for="jamTutup">Jam Tutup:</label><br>
+        <input type="time" id="jamTutup" name="jamTutup"><br><br>
+
+        <button type="submit">Simpan Fasilitas</button>
+    </form>
+
+    <div id="result"></div> <!-- Tempat untuk menampilkan hasil input -->
+</body>
+</html>

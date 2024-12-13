@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tambah Data Kamar</title>
+    <script>
+        function validateRoomForm() {
+            const roomNumber = document.getElementById('roomNumber').value;
+            const roomType = document.getElementById('tipeKamar').value; // Mengambil dari ID yang benar
+            const roomPrice = document.getElementById('roomPrice').value;
+
+            if (roomNumber === '' || roomType === '' || roomPrice === '') {
+                alert('Semua field harus diisi!');
+                return false; // Mencegah pengiriman form
+            }
+
+            // Tampilkan hasil di bawah form
+            displayRoomData(roomNumber, roomType, roomPrice);
+            return false; // Mencegah pengiriman form yang sebenarnya
+        }
+
+        function displayRoomData(roomNumber, roomType, roomPrice) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<h3>Data Kamar Ditambahkan:</h3>
+                                    <ul>
+                                        <li>Nomor Kamar: ${roomNumber}</li>
+                                        <li>Tipe Kamar: ${roomType}</li>
+                                        <li>Harga Kamar: ${roomPrice}</li>
+                                    </ul>`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Form Tambah Data Kamar</h2>
+    <form onsubmit="return validateRoomForm();">
+        <label for="roomNumber">Nomor Kamar:</label><br>
+        <input type="number" id="roomNumber" name="roomNumber"><br><br>
+        <label for="tipeKamar">Tipe Kamar:</label><br>
+        <select id="tipeKamar" name="tipeKamar">
+            <option value="">-- Pilih --</option>
+            <option value="standar">STANDARD</option>
+            <option value="deluxe">DELUXE</option>
+            <option value="family">FAMILY</option>
+        </select><br><br>
+        <label for="roomPrice">Harga Kamar:</label><br>
+        <input type="text" id="roomPrice" name="roomPrice"><br><br>
+        <input type="submit" value="Tambah Kamar">
+    </form>
+
+    <div id="result"></div> <!-- Tempat untuk menampilkan hasil -->
+</body>
+</html>
